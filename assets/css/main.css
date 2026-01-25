@@ -3876,9 +3876,9 @@ input, select, textarea {
 	#intro {
 		background-attachment: fixed;
 		background-image: url("images/Forsida.jpg");
-		background-position: top right;
+		background-position: center right;
 		background-repeat: no-repeat;
-		background-size: 100% 100%;
+		background-size: cover;
 	}
 
 		#intro p {
@@ -3908,3 +3908,4 @@ input, select, textarea {
 			}
 
 		}
+
