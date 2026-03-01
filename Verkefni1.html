@@ -11,6 +11,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		/* Collapsible AI response box */
+		.ai-box { border:1px solid #ddd; border-radius:6px; overflow:hidden; margin-top:1.25rem; }
+		.ai-box__header { background:#f7f7f7; padding:0.5rem 0.75rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+		.ai-box__title { margin:0; font-weight:600; }
+		.ai-box__toggle { background:none; border:0; font-size:1rem; }
+		.ai-box__content { padding:0 0.75rem; max-height:0; overflow:hidden; transition:max-height 0.28s ease, padding 0.18s ease; }
+		.ai-box--open .ai-box__content { padding:0.75rem; }
+		/* Optional: simple monospace styling for AI output */
+		.ai-response { white-space:pre-wrap; font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; background:#fbfbfb; padding:0.5rem; border-radius:4px; border:1px solid #eee; }
+		</style>
 	</head>
 	<body class="is-preload">
 
