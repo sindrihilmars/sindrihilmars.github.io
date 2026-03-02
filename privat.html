@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Git Workflow</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Hyperspace</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Git Workflow</h1>
+							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+							<details class="expandable">
+								<summary>Git Branch Workflow</summary>
+								<div class="expandable-content">
+									<h2>Updating your Main Branch from a Feature Branch</h2>
+									<p>Updating your <code>main</code> branch with changes from a feature branch (like <code>AI</code>) is a standard part of the Git workflow. Depending on whether you want a clean history or a detailed one, you have two primary options.</p>
+
+									<h3>Option 1: The Standard Merge</h3>
+									<p>This is the most common method. It preserves the history of your <code>AI</code> branch and adds a "merge commit" to the <code>main</code> branch.</p>
+									<ol>
+										<li><strong>Commit your changes</strong> on the <code>AI</code> branch:
+											<pre><code>git add .
+git commit -m "Describe your changes here"</code></pre>
+										</li>
+										<li><strong>Switch to the main branch</strong>:
+											<pre><code>git checkout main</code></pre>
+										</li>
+										<li><strong>Pull the latest changes</strong> (always good practice to avoid conflicts):
+											<pre><code>git pull origin main</code></pre>
+										</li>
+										<li><strong>Merge the AI branch</strong>:
+											<pre><code>git merge AI</code></pre>
+										</li>
+										<li><strong>Push to the remote server</strong>:
+											<pre><code>git push origin main</code></pre>
+										</li>
+									</ol>
+
+									<hr />
+
+									<h3>Option 2: The Rebase (For a Linear History)</h3>
+									<p>If you want your commit history to look like a straight line without "merge bubbles," you can use rebase. This effectively moves your <code>AI</code> commits to the tip of the <code>main</code> branch.</p>
+									<ol>
+										<li><strong>While on the AI branch</strong>, pull the latest from main:
+											<pre><code>git fetch origin
+git rebase origin/main</code></pre>
+										</li>
+										<li><strong>Switch to main</strong>:
+											<pre><code>git checkout main</code></pre>
+										</li>
+										<li><strong>Merge (it will be a "fast-forward")</strong>:
+											<pre><code>git merge AI</code></pre>
+										</li>
+										<li><strong>Push</strong>:
+											<pre><code>git push origin main</code></pre>
+										</li>
+									</ol>
+
+									<hr />
+
+									<h3>Which one should you choose?</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Feature</th>
+												<th>Merge</th>
+												<th>Rebase</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>History</strong></td>
+												<td>Traceable, shows exactly when branches joined.</td>
+												<td>Clean, linear, and easy to read.</td>
+											</tr>
+											<tr>
+												<td><strong>Complexity</strong></td>
+												<td>Simple and safe.</td>
+												<td>Can be tricky if multiple people work on the same branch.</td>
+											</tr>
+											<tr>
+												<td><strong>Best For</strong></td>
+												<td>Public projects and shared branches.</td>
+												<td>Personal cleanup before pushing to a shared repo.</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<blockquote>
+										<strong>Pro Tip:</strong> If you encounter a "merge conflict," Git will pause and ask you to pick which code to keep. After you manually fix the files, you'll need to <code>git add</code> them and run <code>git commit</code> to finish the merge.
+									</blockquote>
+								</div>
+							</details>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
