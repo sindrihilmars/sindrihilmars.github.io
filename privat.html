@@ -118,10 +118,29 @@ git rebase origin/main</code></pre>
 									</blockquote>
 								</div>
 							</details>
+							<details class="expandable">
+								<summary>How the Python Script Targets Content</summary>
+								<div class="expandable-content">
+									<h2>Controlling Insertion Location</h2>
+									<p>The script controls where text is inserted using <strong>CSS Selectors</strong>. It does not look for HTML comments or special syntax markers.</p>
+									<p>When you run the script, the third argument you provide (e.g., <code>"#main .inner"</code>) is passed to the BeautifulSoup library, which searches the HTML structure for the first element that matches that specific pattern.</p>
+									<h3>Examples of Selectors</h3>
+									<ul>
+										<li><code>#main</code>: Targets the element with <code>id="main"</code>.</li>
+										<li><code>.content</code>: Targets the first element with <code>class="content"</code>.</li>
+										<li><code>section#one .inner</code>: Targets an element with class <code>inner</code> that is inside a <code>section</code> with id <code>one</code>.</li>
+									</ul>
+									<h3>Behavior</h3>
+									<p>The script finds the <strong>first</strong> match for your selector. If you use the <code>--clear-selector</code> flag (e.g., <code>--clear-selector "p"</code>), it will first remove specific elements inside that target before appending your new Markdown content.</p>
+									<pre><code># Example: Insert into the "Get in touch" section
+python update_verkefni2.py input.md index.html "#three .inner"</code></pre>
+								</div>
+							</details>
 						</div>
 					</section>
 
 			</div>
+
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
