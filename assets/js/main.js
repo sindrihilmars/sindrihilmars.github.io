@@ -187,4 +187,47 @@
 				}
 			});
 
+	// Slideshow.
+		$('.slideshow-container').each(function() {
+			var $this = $(this),
+				$slides = $this.find('.slide'),
+				$prev = $this.find('.prev'),
+				$next = $this.find('.next'),
+				$dots = $this.parent().find('.dot'),
+				slideIndex = 0;
+
+			if ($slides.length > 0) {
+
+				$slides.hide();
+				$($slides[0]).show();
+
+				if ($dots.length > 0) {
+					$dots.first().addClass('active');
+				}
+
+				function showSlide(n) {
+					slideIndex = n;
+					if (slideIndex >= $slides.length) { slideIndex = 0; }
+					if (slideIndex < 0) { slideIndex = $slides.length - 1; }
+
+					$slides.hide();
+					$($slides[slideIndex]).show();
+
+					if ($dots.length > 0) {
+						$dots.removeClass('active');
+						$($dots[slideIndex]).addClass('active');
+					}
+				}
+
+				$prev.on('click', function() { showSlide(slideIndex - 1); });
+				$next.on('click', function() { showSlide(slideIndex + 1); });
+
+				if ($dots.length > 0) {
+					$dots.each(function(i) {
+						$(this).on('click', function() { showSlide(i); });
+					});
+				}
+			}
+		});
+
 })(jQuery);
