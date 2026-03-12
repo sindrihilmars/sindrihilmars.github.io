@@ -20,27 +20,8 @@
   <!-- Header -->
   <header id="header">
    <a class="title" href="index.html">
-    Hyperspace
+    Heim
    </a>
-   <nav>
-    <ul>
-     <li>
-      <a href="index.html">
-       Home
-      </a>
-     </li>
-     <li>
-      <a class="active" href="generic.html">
-       Generic
-      </a>
-     </li>
-     <li>
-      <a href="elements.html">
-       Elements
-      </a>
-     </li>
-    </ul>
-   </nav>
   </header>
   <!-- Wrapper -->
   <div id="wrapper">
@@ -50,9 +31,9 @@
      <h1 class="major">
       Batteríbox Módel
      </h1>
-     <span class="image fit">
-      <img alt="" src="images/pic04.jpg"/>
-     </span>
+     <!-- <span class="image fit">
+      <img alt="" src="images/EH.jpg"/>
+     </span> -->
      <p>
       Módel eru mikilvægur partur af verkfræði og verkfræðilegri hönnun. Mikilvægt er að geta séð hlutinn sem unnið er með á nákvæman og dínamískan máta svo hægt sé að skoða hann, mæla á alla kannta og gera nauðsynlegar breytingar. Að sjálfsögðu er þetta allt gert í tölvum nú til dags og forrit eins og Inventor eða Fusion360 framkvæma þessi verkefni einstaklega vel. Það getur þó orðið þreytandi og jafnvel svolítið 'out of touch' að skoða hlutinn alltaf á rafrænu formi og fyrir stærri verkefni, janfvel þar sem framlag margra einstaklinga og samskipti eru mikilvæg getur verið þess virði að búa til físískt módel af hlutnum sem hægt er að halda á og velta fyrir sér.
      </p>
@@ -63,7 +44,7 @@
       Fyrsta skrefið í ferlinu okkar er að finna út hvaða efni við eigum möguleika á að nota þar sem það segir okkur hversu þykkar plöturnar verða. Í okkar tilfelli þá koma 3mm Akríll og 7.3 mm MDF helst til greina. Nú eru álplöturnar sem notaðar eru í Batterí Boxið flestar aðeins um 2mm en við sættum okkur við að boxið okkar verði ekki í hlutföllum að því leitinu til og ákveðið var að nota 7.3 mm MDF sem botnplötu þar sem það gæfi boxinu stöðugan grunn. Veggirnir verða síðan úr 3mm akríl.
      </p>
      <p>
-      Næsta skref er að teikna boxið upp parametrískt, þ.e. þannig að hægt sé að aðlaga nákvæmlega stærðina á 'fingra-götunum' sem fingurnir frá annari plötu þurfa að passa inní. Það er viðbúið að ekki sé einfaldlega hægt að setjast niður og teikna nákvæmlega box sem passa mun saman, heldur þarf að gera tilraunir með lazer skerann og jafnvel skera út plötur aftur ef við viljum eins stíft box og mögulegt er. Í þessu verkefni var Inventor notað til að teikna upp boxið og útkomuna má sjá hér að neðan.
+      <span class="image left"><img alt="Límmiðar skornir út í vínilskera" src="images/Limmidar-min.jpg"/><small>Límmiðar skornir út í vínislkera</small></span>Næsta skref er að teikna boxið upp parametrískt, þ.e. þannig að hægt sé að aðlaga nákvæmlega stærðina á 'fingra-götunum' sem fingurnir frá annari plötu þurfa að passa inní. Það er viðbúið að ekki sé einfaldlega hægt að setjast niður og teikna nákvæmlega box sem passa mun saman, heldur þarf að gera tilraunir með lazer skerann og jafnvel skera út plötur aftur ef við viljum eins stíft box og mögulegt er. Í þessu verkefni var Inventor notað til að teikna upp boxið og útkomuna má sjá hér að neðan.
      </p>
      <p>
       Til að gera þetta box aðlaganlegt að mismunandi botnþykkt eða mismunandi stærð á götum þá notum við parametra innan inventor. Við búum til einn part inní verkefnismöppunni okkar sem er einfaldlega bara fyrir sameiginlegar stærðir og skilgreinum þar stærðirnar: "width" fyrir breidd á fingragötum, "height" fyrir lengd á fingrum sem fara í botnpötu "botn_T" fyrir þykkt á botnplötu, "wall_T" fyrir þykkt á veggjum, "slit" fyrir lengd á rifu fyrir tvo veggi sem skarast og "length" fyrir lengd á fingragati. Raunverulega áskorunin var að skorða línurnar rétt fyrir sérhvert 'scetch' svo þegar parametrum er breytt þá breytast teikningarnar rétt og þar með parturinn og allt heldur áfram að passa saman. Fyrir þetta er eina lausnin að prófa sig áfram, reyna að velja réttar skorður fyrir sérhvern 'feature'. Þegar boxið er síðan sett saman er hægt að breyta parametrum í master_part skjalinu, uppfæra módelið með eldingar_iconinu í Inventor og nota 'interference analizer' tólið í Inventor til að finna vandamál sem skapast. Smám saman vann ég mig einfaldlega í gegnum allar villurnar þangað til hægt var að breyta öllum parametrum án þess að fá neinar villur.
@@ -71,6 +52,9 @@
      <p>
       Þegar módelið er komið og teikningar fyrir allar plöturnar þar með þá þurfti að yfirfæra inventor teikningarnar yfir á eitthvað form s.s. pdf eða svg sem
      </p>
+     <span class="image fit">
+      <img alt="" src="images/Inkscape.png"/>
+     </span>
     </div>
    </section>
   </div>
