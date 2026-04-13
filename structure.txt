@@ -1,0 +1,127 @@
+.
+├── assets
+│   ├── css
+│   │   ├── fontawesome-all.min.css
+│   │   ├── images
+│   │   │   ├── Forsida.jpg
+│   │   │   └── intro.svg
+│   │   ├── main.css
+│   │   └── noscript.css
+│   ├── js
+│   │   ├── breakpoints.min.js
+│   │   ├── browser.min.js
+│   │   ├── jquery.min.js
+│   │   ├── jquery.scrollex.min.js
+│   │   ├── jquery.scrolly.min.js
+│   │   ├── main.js
+│   │   └── util.js
+│   ├── sass
+│   │   ├── base
+│   │   │   ├── _page.scss
+│   │   │   ├── _reset.scss
+│   │   │   └── _typography.scss
+│   │   ├── components
+│   │   │   ├── _actions.scss
+│   │   │   ├── _box.scss
+│   │   │   ├── _button.scss
+│   │   │   ├── _contact.scss
+│   │   │   ├── _features.scss
+│   │   │   ├── _form.scss
+│   │   │   ├── _icon.scss
+│   │   │   ├── _icons.scss
+│   │   │   ├── _image.scss
+│   │   │   ├── _list.scss
+│   │   │   ├── _menu.scss
+│   │   │   ├── _row.scss
+│   │   │   ├── _section.scss
+│   │   │   ├── _split.scss
+│   │   │   ├── _spotlights.scss
+│   │   │   ├── _table.scss
+│   │   │   └── _wrapper.scss
+│   │   ├── layout
+│   │   │   ├── _footer.scss
+│   │   │   ├── _header.scss
+│   │   │   ├── _intro.scss
+│   │   │   ├── _sidebar.scss
+│   │   │   └── _wrapper.scss
+│   │   ├── libs
+│   │   │   ├── _breakpoints.scss
+│   │   │   ├── _functions.scss
+│   │   │   ├── _html-grid.scss
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _vars.scss
+│   │   │   └── _vendor.scss
+│   │   ├── main.scss
+│   │   └── noscript.scss
+│   └── webfonts
+│       ├── fa-brands-400.eot
+│       ├── fa-brands-400.svg
+│       ├── fa-brands-400.ttf
+│       ├── fa-brands-400.woff
+│       ├── fa-brands-400.woff2
+│       ├── fa-regular-400.eot
+│       ├── fa-regular-400.svg
+│       ├── fa-regular-400.ttf
+│       ├── fa-regular-400.woff
+│       ├── fa-regular-400.woff2
+│       ├── fa-solid-900.eot
+│       ├── fa-solid-900.svg
+│       ├── fa-solid-900.ttf
+│       ├── fa-solid-900.woff
+│       └── fa-solid-900.woff2
+├── DESIGN.md
+├── elements.html
+├── generic.html
+├── images
+│   ├── 3D_Prent.jpg
+│   ├── Base.png
+│   ├── BBX_Med_Segment (1).png
+│   ├── BBX.png
+│   ├── Blokk.png
+│   ├── Blokk_.png
+│   ├── Blokk_Prusa2.png
+│   ├── EH.jpg
+│   ├── Features.png
+│   ├── fingerjoint.jpg
+│   ├── Github_Icon2.png
+│   ├── Inkscape.png
+│   ├── Lalli_og_Masi.JPG
+│   ├── Laser_Test1.png
+│   ├── Limingar_2-min.jpg
+│   ├── Limingarkassi_Notkun2-min.jpg
+│   ├── Limingarkassi_Notkun-min.jpg
+│   ├── Limingar-min.jpg
+│   ├── Limmidar_Inkscape.png
+│   ├── Limmidar-min.jpg
+│   ├── parameters.png
+│   ├── Prusa.png
+│   ├── Samsetning1.png
+│   ├── Samsetning2.png
+│   ├── Samsetning3.png
+│   ├── Segment_i_BBX-min.jpg
+│   ├── Segment_i_Limingu-min.jpg
+│   ├── Tabbi_Flatur-min.jpg
+│   ├── Tabbi_Hlid-min.jpg
+│   ├── Test1.png
+│   ├── Test2.png
+│   ├── Test3.png
+│   ├── Test4.png
+│   ├── Test_Utskorid.jpg
+│   ├── Tree.png
+│   └── Work_in_progress.jpg
+├── index.html
+├── LICENSE.txt
+├── Other_Assets
+│   ├── cv.pdf
+│   ├── Verkefni2.txt
+│   └── Verkefni3.txt
+├── privat.html
+├── README.txt
+├── structure.txt
+├── Verkefni1.html
+├── Verkefni2.html
+├── Verkefni3.html
+├── Verkefni4.html
+└── write.py
+
+13 directories, 112 files
