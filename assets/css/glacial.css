@@ -1,0 +1,724 @@
+/*
+  Glacial Editorial — Design Override
+  The Icy Lake palette for sindrihilmars.github.io
+  Inspired by DESIGN.md: "The Glacial Editorial"
+*/
+
+/* =============================================
+   1. Design Tokens (CSS Custom Properties)
+   ============================================= */
+:root {
+  /* Surface hierarchy */
+  --surface:                #f7f9fb;
+  --surface-container-low:  #f2f4f6;
+  --surface-container:      #eceef0;
+  --surface-container-high: #e4e6e9;
+  --surface-container-lowest: #ffffff;
+
+  /* Deep anchors */
+  --primary:           #001629;
+  --primary-container: #002b49;
+  --secondary:         #4a667a;
+  --secondary-container: #d0e4f0;
+  --on-secondary-container: #0d2030;
+  --secondary-fixed-dim: rgba(176, 202, 222, 0.3);
+  --tertiary: #06161a;
+
+  /* Borders & shadows — "No-Line" rule */
+  --outline-variant: rgba(195, 199, 206, 0.15);
+  --shadow-tinted:   0 12px 32px rgba(0, 22, 41, 0.06);
+  --shadow-hover:    0 16px 40px rgba(0, 22, 41, 0.10);
+
+  /* Typography */
+  --font-display: 'Manrope', Arial, sans-serif;
+  --font-body:    'Inter', Arial, sans-serif;
+
+  /* Transitions — "Still Lake" pacing */
+  --transition-speed: 400ms;
+}
+
+
+/* =============================================
+   2. Global Base
+   ============================================= */
+html {
+  background-color: var(--surface);
+}
+
+body {
+  background-color: var(--surface) !important;
+  color: var(--primary) !important;
+  font-family: var(--font-body) !important;
+}
+
+body, input, select, textarea {
+  color: var(--primary) !important;
+  font-family: var(--font-body) !important;
+  line-height: 1.6 !important;
+  font-size: 15pt;
+}
+
+@media screen and (max-width: 1680px) {
+  body, input, select, textarea { font-size: 12pt; }
+}
+@media screen and (max-width: 1280px) {
+  body, input, select, textarea { font-size: 11pt; }
+}
+@media screen and (max-width: 360px) {
+  body, input, select, textarea { font-size: 10pt; }
+}
+
+/* =============================================
+   3. Typography
+   ============================================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display) !important;
+  color: var(--primary) !important;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+h1 { font-size: 3.5rem !important; }
+h2 { font-size: 2rem   !important; }
+h3 { font-size: 1.25rem !important; }
+h4 { font-size: 1rem   !important; }
+h5 { font-size: 0.85rem !important; }
+h6 { font-size: 0.7rem  !important; }
+
+@media screen and (max-width: 736px) {
+  h1 { font-size: 2.25rem !important; }
+  h2 { font-size: 1.5rem  !important; }
+  h3 { font-size: 1.1rem  !important; }
+}
+@media screen and (max-width: 480px) {
+  h1 { font-size: 1.9rem !important; }
+}
+
+strong, b {
+  color: var(--primary) !important;
+}
+
+/* Decorative h1.major underline — glacial gradient */
+h1.major:after {
+  background-image: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary)
+  ) !important;
+}
+
+
+/* =============================================
+   4. Links
+   ============================================= */
+a {
+  color: var(--primary) !important;
+  border-bottom-color: rgba(0, 22, 41, 0.18) !important;
+  transition:
+    color var(--transition-speed) ease,
+    border-bottom-color var(--transition-speed) ease !important;
+}
+
+a:hover {
+  color: var(--secondary) !important;
+  border-bottom-color: transparent !important;
+}
+
+
+/* =============================================
+   5. Buttons
+   ============================================= */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-container)) !important;
+  border: none !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  border-radius: 0.375rem !important;
+  transition:
+    opacity var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease !important;
+  box-shadow: var(--shadow-tinted);
+  letter-spacing: 0.12em;
+}
+
+input[type="submit"]:after,
+input[type="reset"]:after,
+input[type="button"]:after,
+button:after,
+.button:after {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0.375rem !important;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+  border-color: transparent !important;
+  box-shadow: var(--shadow-hover) !important;
+  opacity: 0.92;
+}
+
+/* Primary button variant (same gradient, keep white text) */
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-container)) !important;
+  color: #ffffff !important;
+}
+
+/* Glassmorphism CTA — used on #intro */
+.button.glass {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.button.glass:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+}
+
+
+/* =============================================
+   6. Box
+   ============================================= */
+.box {
+  border: none !important;
+  border-radius: 0.5rem !important;
+  background: var(--surface-container-lowest) !important;
+  box-shadow: var(--shadow-tinted) !important;
+}
+
+.box.alt {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+
+/* =============================================
+   7. Forms
+   ============================================= */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  background: var(--surface-container-high) !important;
+  border: 1px solid var(--outline-variant) !important;
+  color: var(--primary) !important;
+  border-radius: 0.125rem !important;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  background: var(--surface-container-lowest) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 1px var(--secondary) !important;
+}
+
+label {
+  color: var(--primary) !important;
+}
+
+select option {
+  color: var(--primary) !important;
+  background: var(--surface-container-lowest) !important;
+}
+
+::-webkit-input-placeholder { color: rgba(0, 22, 41, 0.35) !important; opacity: 1; }
+:-moz-placeholder            { color: rgba(0, 22, 41, 0.35) !important; opacity: 1; }
+::-moz-placeholder           { color: rgba(0, 22, 41, 0.35) !important; opacity: 1; }
+:-ms-input-placeholder       { color: rgba(0, 22, 41, 0.35) !important; opacity: 1; }
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  color: var(--primary) !important;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  background: var(--surface-container) !important;
+  border-color: var(--outline-variant) !important;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 1px var(--secondary) !important;
+}
+
+
+/* =============================================
+   8. Tables
+   ============================================= */
+table th {
+  color: var(--primary) !important;
+}
+
+table tbody tr {
+  border-color: var(--outline-variant) !important;
+}
+
+table tbody tr:nth-child(2n + 1) {
+  background-color: var(--surface-container-low) !important;
+}
+
+table thead {
+  border-bottom: 2px solid var(--outline-variant) !important;
+}
+
+table tfoot {
+  border-top: 2px solid var(--outline-variant) !important;
+}
+
+table.alt tbody tr td {
+  border-color: var(--outline-variant) !important;
+}
+
+
+/* =============================================
+   9. Code / Pre
+   ============================================= */
+code {
+  background: var(--surface-container-low) !important;
+  border: 1px solid var(--outline-variant) !important;
+  color: var(--primary) !important;
+}
+
+blockquote {
+  border-left-color: var(--secondary) !important;
+  color: var(--secondary) !important;
+}
+
+hr {
+  border-bottom: 1px solid var(--outline-variant) !important;
+}
+
+ul.alt li {
+  border-top-color: var(--outline-variant) !important;
+}
+
+
+/* =============================================
+   10. Lists
+   ============================================= */
+ul.menu > li {
+  border-left-color: var(--outline-variant) !important;
+}
+
+/* header/contact labels */
+header p {
+  color: var(--secondary) !important;
+}
+
+
+/* =============================================
+   11. Expandable (details/summary)
+   ============================================= */
+details.expandable {
+  background: var(--surface-container-low) !important;
+  border: 1px solid var(--outline-variant) !important;
+}
+
+details.expandable summary {
+  color: var(--primary) !important;
+}
+
+details.expandable .expandable-content {
+  border-top-color: var(--outline-variant) !important;
+}
+
+
+/* =============================================
+   12. Split layout
+   ============================================= */
+.split > :nth-child(2n - 1) {
+  border-right-color: var(--outline-variant) !important;
+}
+
+@media screen and (max-width: 980px) {
+  .split > * {
+    border-top-color: var(--outline-variant) !important;
+  }
+}
+
+
+/* =============================================
+   13. Icons (major)
+   ============================================= */
+.icon.major {
+  background: var(--secondary-container) !important;
+  color: var(--primary) !important;
+}
+
+.icon.major:before,
+.wrapper.style1 .icon.major:before,
+.wrapper.style1-alt .icon.major:before,
+.wrapper.style2 .icon.major:before,
+.wrapper.style2-alt .icon.major:before,
+.wrapper.style3 .icon.major:before,
+.wrapper.style3-alt .icon.major:before {
+  color: var(--primary) !important;
+}
+
+
+/* =============================================
+   14. Features section
+   ============================================= */
+.features {
+  border: none !important;
+  background: transparent !important;
+}
+
+.features section {
+  border-top-color: var(--outline-variant) !important;
+  transition: background-color var(--transition-speed) ease !important;
+}
+
+.features section:nth-child(2n) {
+  border-left-color: var(--outline-variant) !important;
+}
+
+
+/* =============================================
+   15. Spotlights (project cards)
+   ============================================= */
+.spotlights > section {
+  transition:
+    background-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease !important;
+}
+
+/* Alternating tonal backgrounds — odd on surface, even on container-low */
+.spotlights > section:nth-child(odd) {
+  background-color: var(--surface) !important;
+}
+.spotlights > section:nth-child(even) {
+  background-color: var(--surface-container-low) !important;
+}
+
+/* Image overlay: primary-tinted instead of dark purple */
+.spotlights > section > .image:before {
+  background: rgba(0, 22, 41, 0.72) !important;
+  transition: opacity var(--transition-speed) ease !important;
+}
+
+/* Content area */
+.spotlights > section > .content {
+  transition: background-color var(--transition-speed) ease !important;
+}
+
+.spotlights > section:hover > .content {
+  background: var(--surface-container-lowest) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+
+/* =============================================
+   16. Wrapper Style Backgrounds
+   ============================================= */
+
+/* Intro section (has background-image; bg-color is fallback) */
+.wrapper.style1 {
+  background-color: var(--surface-container-low) !important;
+}
+
+/* Spotlights section */
+.wrapper.style2 {
+  background-color: var(--surface) !important;
+}
+
+/* "Follow me" social links section */
+.wrapper.style3 {
+  background-color: var(--surface-container) !important;
+}
+
+/* Footer */
+.wrapper.alt,
+.wrapper.style1-alt {
+  background-color: var(--primary) !important;
+}
+
+.wrapper.style2-alt {
+  background-color: var(--surface-container-low) !important;
+}
+
+.wrapper.style3-alt {
+  background-color: var(--surface-container) !important;
+}
+
+
+/* =============================================
+   17. Intro Hero Section
+   ============================================= */
+#intro {
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(0, 22, 41, 0.84),
+      rgba(0, 43, 73, 0.76)
+    ),
+    url("images/Forsida.jpg") !important;
+}
+
+#intro h1 {
+  font-family: var(--font-display) !important;
+  color: #ffffff !important;
+  font-size: 3.8rem !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 800 !important;
+}
+
+#intro p {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 1.15rem !important;
+  line-height: 1.7 !important;
+}
+
+#intro .button {
+  background: rgba(255, 255, 255, 0.14) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.30) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  border-radius: 0.375rem !important;
+}
+
+#intro .button:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  box-shadow: none !important;
+}
+
+#intro .button:after {
+  display: none !important;
+}
+
+@media screen and (max-width: 736px) {
+  #intro h1 { font-size: 2.4rem !important; }
+  #intro p  { font-size: 1rem  !important; }
+}
+@media screen and (max-width: 480px) {
+  #intro h1 { font-size: 2rem !important; }
+}
+
+
+/* =============================================
+   18. Sidebar
+   ============================================= */
+#sidebar {
+  background: var(--primary) !important;
+  /* Subtle right edge — tonal, no hard line */
+  box-shadow: 4px 0 24px rgba(0, 22, 41, 0.08) !important;
+}
+
+#sidebar nav > ul > li {
+  transition: opacity var(--transition-speed) ease !important;
+}
+
+#sidebar nav a {
+  color: rgba(255, 255, 255, 0.50) !important;
+  transition: color var(--transition-speed) ease !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.55em !important;
+  letter-spacing: 0.22em !important;
+}
+
+#sidebar nav a:hover {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+#sidebar nav a.active {
+  color: #ffffff !important;
+}
+
+/* Track bar under nav links */
+#sidebar nav a:before {
+  background: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Active/hover accent line — icy tones */
+#sidebar nav a:after {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.55),
+    rgba(176, 202, 222, 0.6)
+  ) !important;
+  transition: max-width var(--transition-speed) ease !important;
+}
+
+
+/* =============================================
+   19. Header (project sub-pages)
+   ============================================= */
+#header {
+  background-color: var(--primary) !important;
+}
+
+#header > .title {
+  color: #ffffff !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+#header > nav > ul > li a {
+  color: rgba(255, 255, 255, 0.50) !important;
+  transition: color var(--transition-speed) ease !important;
+}
+
+#header > nav > ul > li a:hover,
+#header > nav > ul > li a.active {
+  color: #ffffff !important;
+}
+
+@media screen and (max-width: 480px) {
+  #header > nav {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+  }
+}
+
+
+/* =============================================
+   20. Footer
+   ============================================= */
+#footer {
+  background-color: var(--primary) !important;
+}
+
+#footer > .inner a {
+  color: rgba(255, 255, 255, 0.65) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+  transition:
+    color var(--transition-speed) ease,
+    border-bottom-color var(--transition-speed) ease !important;
+}
+
+#footer > .inner a:hover {
+  color: #ffffff !important;
+  border-bottom-color: transparent !important;
+}
+
+#footer > .inner .menu {
+  color: rgba(255, 255, 255, 0.38) !important;
+  font-size: 0.8em !important;
+}
+
+
+/* =============================================
+   21. Slideshow (dot indicators)
+   ============================================= */
+.dot {
+  background-color: rgba(0, 22, 41, 0.18) !important;
+  transition: background-color var(--transition-speed) ease !important;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: var(--primary) !important;
+}
+
+.prev, .next {
+  background-color: rgba(0, 22, 41, 0.35) !important;
+  color: #ffffff !important;
+  transition: background-color var(--transition-speed) ease !important;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 22, 41, 0.65) !important;
+}
+
+
+/* =============================================
+   22. "Ice-Chip" tag style
+   ============================================= */
+.chip {
+  display: inline-block;
+  background: var(--secondary-fixed-dim);
+  color: var(--on-secondary-container);
+  border-radius: 2rem;
+  padding: 0.2em 0.75em;
+  font-size: 0.7em;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+
+/* =============================================
+   23. Project pages — main content wrapper
+   ============================================= */
+/* The #header + #wrapper pages use a light background */
+#header + #wrapper {
+  background-color: var(--surface) !important;
+}
+
+#header + #wrapper .wrapper {
+  background-color: transparent !important;
+}
+
+/* Give the inner content some extra breathing room */
+#header + #wrapper .wrapper > .inner {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Image captions */
+.image small {
+  display: block;
+  font-size: 0.75em;
+  color: var(--secondary);
+  margin-top: 0.4em;
+  font-style: italic;
+}
+
+
+/* =============================================
+   24. Responsive — sidebar to top-bar
+   ============================================= */
+@media screen and (max-width: 1280px) {
+  #sidebar {
+    background: var(--primary) !important;
+    /* on small screens it becomes a top bar */
+  }
+
+  #sidebar nav a {
+    color: rgba(255, 255, 255, 0.60) !important;
+  }
+
+  #sidebar nav a.active {
+    color: #ffffff !important;
+  }
+
+  #sidebar nav a:after {
+    background-color: rgba(255, 255, 255, 0.55) !important;
+    background-image: none !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #intro h1 {
+    font-size: 2.2rem !important;
+    letter-spacing: -0.02em !important;
+  }
+}
